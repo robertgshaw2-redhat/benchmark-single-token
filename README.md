@@ -24,7 +24,7 @@ python -m sglang.launch_server --model-path Qwen/Qwen2.5-0.5B
 
 The following results were generated on H100:
 
-## Installation
+### Installation
 
 ```bash
 git clone https://github.com/robertgshaw2-redhat/benchmark-single-token.git
@@ -32,7 +32,7 @@ cd benchmark-single-token
 pip install -r requirements.txt
 ```
 
-## Benchmark Offline Throughput
+### Benchmark Offline Throughput
 
 ```bash
 python3 benchmark.py
@@ -60,7 +60,7 @@ Min Latency:  1.95
 Max Latency:  50.86
 ```
 
-## Benchmark Online Serving With 10 Concurrency Requests
+### Benchmark Online Serving With 10 Concurrency Requests
 
 ```bash
 python3 benchmark.py --port 8001 --max-concurrency 10
@@ -87,5 +87,3 @@ Avg Latency:  5.50
 Min Latency:  1.33
 Max Latency:  8.01
 ```
-
-
