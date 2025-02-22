@@ -60,7 +60,7 @@ Min Latency:  1.95
 Max Latency:  50.86
 ```
 
-### Benchmark Online Serving With 10 Concurrency Requests
+### Benchmark Online Serving With 10 Concurrent Requests
 
 ```bash
 python3 benchmark.py --port 8001 --max-concurrency 10
