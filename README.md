@@ -16,8 +16,9 @@ VLLM_USE_V1=1 vllm serve Qwen/Qwen2.5-0.5B --disable-log-requests
 python3 -m venv venv-sglang
 source venv-sglang/bin/activate
 pip install "sglang[all]==0.4.3.post2" --find-links https://flashinfer.ai/whl/cu124/torch2.5/flashinfer-python
+pip install transformers==4.48.3 # transformers==4.49.0 is broken on SGLang. See https://docs.sglang.ai/start/install.html
 
-python -m sglang.launch_server --model-path Qwen/Qwen2.5-0.5B
+python -m sglang.launch_server --model-path Qwen/Qwen2.5-0.5B --port 8000
 ```
 
 ## Benchmark Clients
@@ -63,7 +64,7 @@ Max Latency:  50.86
 ### Benchmark Online Serving With 10 Concurrent Requests
 
 ```bash
-python3 benchmark.py --port 8001 --max-concurrency 10
+python3 benchmark.py --max-concurrency 10
 ```
 
 - `sglang` output:
