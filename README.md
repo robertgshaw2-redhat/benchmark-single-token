@@ -1,6 +1,6 @@
-# Launch Servers
+## Server Launch Commands
 
-## vLLM Launch
+### `vllm`
 
 ```bash
 python3 -m venv venv-vllm
@@ -10,7 +10,7 @@ pip install vllm==0.7.3
 VLLM_USE_V1=1 vllm serve Qwen/Qwen2.5-0.5B --disable-log-requests
 ```
 
-## Sglang Launch
+### `sglang`
 
 ```bash
 python3 -m venv venv-sglang
@@ -20,15 +20,19 @@ pip install "sglang[all]==0.4.3.post2" --find-links https://flashinfer.ai/whl/cu
 python -m sglang.launch_server --model-path Qwen/Qwen2.5-0.5B
 ```
 
-# Benchmark Code
+## Benchmark Clients
+
+The following results were generated on H100:
+
+## Installation
 
 ```bash
+git clone https://github.com/robertgshaw2-redhat/benchmark-single-token.git
+cd benchmark-single-token
 pip install -r requirements.txt
 ```
 
 ## Benchmark Offline Throughput
-
-The following results were generated on H100:
 
 ```bash
 python3 benchmark.py
@@ -76,7 +80,12 @@ Max Latency:  14.85
 - `vllm` output:
 
 ```bash
-
+Total Requests:  100
+Prompts/Request:  250
+Total Time:  57.20
+Avg Latency:  5.50
+Min Latency:  1.33
+Max Latency:  8.01
 ```
 
 
