@@ -39,10 +39,10 @@ python3 benchmark.py
 ```bash
 Total Requests:  100
 Prompts/Request:  250
-Total Time:  145.07
-Avg Latency:  77.86
-Min Latency:  36.21
-Max Latency:  144.99
+Total Time:  142.64
+Avg Latency:  81.99
+Min Latency:  45.00
+Max Latency:  142.36
 ```
 
 - `vllm` output:
