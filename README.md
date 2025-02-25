@@ -7,7 +7,7 @@ python3 -m venv venv-vllm
 source venv-vllm/bin/activate
 pip install vllm==0.7.3
 
-VLLM_USE_V1=1 vllm serve Qwen/Qwen2.5-0.5B --disable-log-requests
+VLLM_USE_V1=1 vllm serve Qwen/Qwen2.5-0.5B --quantizeation fp8 --disable-log-requests
 ```
 
 ### `sglang`
