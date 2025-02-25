@@ -78,8 +78,8 @@ Max Latency:  14.27
 ```bash
 Total Requests:  100
 Prompts/Request:  250
-Total Time:  57.20
-Avg Latency:  5.50
-Min Latency:  1.33
-Max Latency:  8.01
+Total Time:  54.46
+Avg Latency:  5.22
+Min Latency:  1.18
+Max Latency:  6.55
 ```
