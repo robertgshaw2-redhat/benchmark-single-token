@@ -13,7 +13,7 @@ VLLM_USE_V1=1 vllm serve Qwen/Qwen2.5-0.5B --quantization fp8 --disable-log-requ
 ### `sglang`
 
 ```bash
-docker run --gpus all --shm-size 32g -p 8001:8001 -v ~/.cache/huggingface:/root/.cache/huggingface --env "HF_TOKEN=$HF_TOKEN" --ipc=host lmsysorg/sglang:latest python3 -m sglang.launch_server --model-path Qwen/Qwen2.5-0.5B --tp-size 1 --dp-size 1 --disable-cuda-graph --quantization fp8 --enable-torch-compile --sampling-backend flashinfer --attention-backend flashinfer --port 8001
+docker run --gpus all --shm-size 32g -p 8000:8000 -v ~/.cache/huggingface:/root/.cache/huggingface --env "HF_TOKEN=$HF_TOKEN" --ipc=host lmsysorg/sglang:latest python3 -m sglang.launch_server --model-path Qwen/Qwen2.5-0.5B --tp-size 1 --dp-size 1 --disable-cuda-graph --quantization fp8 --enable-torch-compile --sampling-backend flashinfer --attention-backend flashinfer --port 8000
 ```
 
 ## Benchmark Clients
@@ -67,10 +67,10 @@ python3 benchmark.py --max-concurrency 10
 ```bash
 Total Requests:  100
 Prompts/Request:  250
-Total Time:  123.09
-Avg Latency:  11.66
-Min Latency:  3.48
-Max Latency:  14.85
+Total Time:  118.89
+Avg Latency:  11.29
+Min Latency:  2.58
+Max Latency:  14.27
 ```
 
 - `vllm` output:
