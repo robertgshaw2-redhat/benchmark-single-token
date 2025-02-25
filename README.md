@@ -13,12 +13,7 @@ VLLM_USE_V1=1 vllm serve Qwen/Qwen2.5-0.5B --disable-log-requests
 ### `sglang`
 
 ```bash
-python3 -m venv venv-sglang
-source venv-sglang/bin/activate
-pip install "sglang[all]==0.4.3.post2" --find-links https://flashinfer.ai/whl/cu124/torch2.5/flashinfer-python
-pip install transformers==4.48.3 # transformers==4.49.0 is broken on SGLang. See https://docs.sglang.ai/start/install.html
-
-python -m sglang.launch_server --model-path Qwen/Qwen2.5-0.5B --port 8000
+docker run --gpus all --shm-size 32g -p 8001:8001 -v ~/.cache/huggingface:/root/.cache/huggingface --env "HF_TOKEN=$HF_TOKEN" --ipc=host lmsysorg/sglang:latest python3 -m sglang.launch_server --model-path Qwen/Qwen2.5-0.5B --tp-size 1 --dp-size 1 --disable-cuda-graph --quantization fp8 --enable-torch-compile --sampling-backend flashinfer --attention-backend flashinfer --port 8001
 ```
 
 ## Benchmark Clients
