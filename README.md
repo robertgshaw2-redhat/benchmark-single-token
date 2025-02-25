@@ -50,10 +50,10 @@ Max Latency:  142.36
 ```bash
 Total Requests:  100
 Prompts/Request:  250
-Total Time:  51.13
-Avg Latency:  27.50
-Min Latency:  1.95
-Max Latency:  50.86
+Total Time:  56.60
+Avg Latency:  30.24
+Min Latency:  2.25
+Max Latency:  56.33
 ```
 
 ### Benchmark Online Serving With 10 Concurrent Requests
